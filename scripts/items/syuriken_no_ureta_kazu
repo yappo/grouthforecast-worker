@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "SELECT COUNT(*) FROM buy_item WHERE category = '手裏剣';" | mysql -N -u$MYSQL_BATHCH_USER -h$MYSQL_BATHCH_HOST -p$MYSQL_BATHCH_PASSWORD ninjyatoriai

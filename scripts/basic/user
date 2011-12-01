@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "SELECT COUNT(*) FROM user;" | mysql -N -uroot ninjyatoriai

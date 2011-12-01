@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "mala	1"
+echo "kazeburo	0"
+echo "yappo	0"

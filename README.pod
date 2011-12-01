@@ -1,0 +1,57 @@
+=head1 これは何?
+
+GrowthForecast ( http://blog.nomadscafe.jp/2011/12/growthforecast.html ) を使う時に、複数のグラフを作る時に簡単なスクリプトファイルを配置するだけでグラフを増やして行ける便利ツールです。
+
+=head1 使い方
+
+    $ grouthforecast.pl スクリプトを入れてるディレクトリ
+
+を実行して起動します。
+
+crontab に入れる時は
+
+    */5 * * * * /foo/bar/grouthforecast.pl /foo/bar/scripts
+
+などと指定するとよいでしょう。
+
+ファイル構造は scripts 以下の最初のディレクトリが :section_name に該当します。
+例えば、以下のようなファイル構造だと
+
+    scripts/
+    ├── basic
+    │   └── user
+    └── items
+        └── syuriken_no_ureta_kazu
+
+http://example.com/api/example/basic/user
+http://example.com/api/example/items/syuriken_no_ureta_kazu
+
+の二つのグラフを作りに行きます。
+スクリプト名に拡張子を付けるとださくなるので注意。
+
+=head2 bulk 更新機能
+
+複数のスクリプトで数値を取る事が非効率な場合は、ファイル名の prefix に bulk_ って付けると、複数のグラフに対して同時に更新出来ます。
+growthforecast に登録されるグラフ名は bulk_ を抜いたファイル名が使われます。
+
+このスクリプトの出力は
+
+    サブ名1<TAB>123
+    サブ名2<TAB>234
+
+という風にしてください、 bulk_テスト ってスクリプト名だと テスト_サブ名1, テスト_サブ名2 っていう二つのグラフが出来ます。
+いっこいっこスクリプト書く時にうざい時にこっち使って下さい。
+
+例えば添付の scripts/basic/bulk_neets は
+
+http://example.com/api/example/basic/neets_mala
+http://example.com/api/example/basic/neets_kazeburo
+http://example.com/api/example/basic/neets_yappo
+
+のグラフを作りに行きます。
+
+=head1 注意
+
+テストする時は実行権限落としとけば自動巡回されないので、実行権限落としといてください。
+
+=cut
