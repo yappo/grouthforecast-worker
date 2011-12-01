@@ -1,3 +1,5 @@
+ =encoding utf8
+
 =head1 これは何?
 
 GrowthForecast ( http://blog.nomadscafe.jp/2011/12/growthforecast.html ) を使う時に、複数のグラフを作る時に簡単なスクリプトファイルを配置するだけでグラフを増やして行ける便利ツールです。
